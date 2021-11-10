@@ -17,7 +17,7 @@ import slinky.web.html._
           tbody(
             tr(
               td("author"),
-              td("oen")
+              td("@EstebanMarin")
             ),
             tr(
               td("github"),
@@ -51,7 +51,7 @@ import slinky.web.html._
             ),
             tr(
               td("use"),
-              td("do whatever you want!")
+              td("I made changes!")
             )
           )
         )

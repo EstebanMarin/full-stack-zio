@@ -12,10 +12,10 @@ val Ver = new {
 }
 
 lazy val sharedSettings = Seq(
-  scalaVersion     := "2.13.6",
-  version          := "0.1.0-SNAPSHOT",
-  organization     := "com.github.oen9",
-  organizationName := "oen9",
+  scalaVersion := "2.13.6",
+  version := "0.1.0-SNAPSHOT",
+  organization := "com.estebanmarin",
+  organizationName := "EstebanMarin",
   libraryDependencies ++= Seq(
     "org.typelevel"              %% "cats-core"             % "2.6.1",
     "io.circe"                   %%% "circe-parser"         % Ver.circe,
@@ -39,13 +39,13 @@ lazy val sharedSettings = Seq(
 
 lazy val jsSettings = Seq(
   libraryDependencies ++= Seq(
-    "me.shadaj"                  %%% "slinky-web"                % Ver.slinky,
-    "me.shadaj"                  %%% "slinky-react-router"       % Ver.slinky,
-    "io.suzaku"                  %%% "diode"                     % "1.1.14",
-    "com.github.oen9"            %%% "slinky-bridge-react-konva" % "0.1.1",
-    "com.github.ghostdogpr"      %%% "caliban-client"            % Ver.caliban
+    "me.shadaj"             %%% "slinky-web"                % Ver.slinky,
+    "me.shadaj"             %%% "slinky-react-router"       % Ver.slinky,
+    "io.suzaku"             %%% "diode"                     % "1.1.14",
+    "com.github.oen9"       %%% "slinky-bridge-react-konva" % "0.1.1",
+    "com.github.ghostdogpr" %%% "caliban-client"            % Ver.caliban
   ),
-  Compile / npmDependencies  ++= Seq(
+  Compile / npmDependencies ++= Seq(
     "react"            -> "16.13.1",
     "react-dom"        -> "16.13.1",
     "react-popper"     -> "1.3.7",
@@ -68,7 +68,6 @@ lazy val jvmSettings = Seq(
     "dev.zio"                     %% "zio"                      % Ver.zio,
     "dev.zio"                     %% "zio-interop-cats"         % "2.5.1.0",
     "dev.zio"                     %% "zio-logging-slf4j"        % "0.5.10",
-
     "org.http4s"                  %% "http4s-blaze-server"      % Ver.http4s,
     "org.http4s"                  %% "http4s-circe"             % Ver.http4s,
     "org.http4s"                  %% "http4s-dsl"               % Ver.http4s,
@@ -83,7 +82,6 @@ lazy val jvmSettings = Seq(
     "com.softwaremill.sttp.tapir" %% "tapir-json-circe"         % Ver.tapir,
     "ch.qos.logback"              % "logback-classic"           % Ver.logback,
     "com.github.pureconfig"       %% "pureconfig"               % "0.15.0",
-
     "org.reactivemongo"           %% "reactivemongo"            % "1.0.4",
     "org.flywaydb"                % "flyway-core"               % "7.9.2",
     "org.postgresql"              % "postgresql"                % "42.2.20",
@@ -92,7 +90,6 @@ lazy val jvmSettings = Seq(
     "org.tpolecat"                %% "doobie-hikari"            % Ver.doobie,
     "org.reactormonk"             %% "cryptobits"               % "1.3",
     "org.mindrot"                 % "jbcrypt"                   % "0.4",
-
     "dev.zio"                     %% "zio-test"                 % Ver.zio % Test,
     "dev.zio"                     %% "zio-test-sbt"             % Ver.zio % Test,
     "com.h2database"              % "h2"                        % "1.4.200" % Test
@@ -118,7 +115,7 @@ lazy val appJVM = app.jvm
   .enablePlugins(JavaAppPackaging)
   .settings(
     dockerExposedPorts := Seq(8080),
-    dockerBaseImage := "oracle/graalvm-ce:20.2.0-java11",
+    dockerBaseImage := "ghcr.io/graalvm/graalvm-ce:java11-21.3.0",
     Compile / unmanagedResourceDirectories += (appJS / Compile / resourceDirectory).value,
     Universal / mappings ++= (appJS / Compile / fullOptJS / webpack).value.map { f =>
       f.data -> s"assets/${f.data.getName()}"
