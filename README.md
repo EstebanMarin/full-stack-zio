@@ -5,15 +5,11 @@ full-stack-zio
 ## Features
 
 1. TODO list - MongoDB
-1. Small Flappy Bird game with scoreboard - Postgres\
-The game is badly optimised because of not working directly with canvas.
-It is just my demo focusing on react with scalajs.
+1. Small Flappy Bird game with scoreboard - Postgres
 1. Auth example (register, singin, signout, secured endpoint) - Postgres
 1. API documentation - Swagger
 1. Small chat with websockets
 1. GraphQL example
-
-## Libs
 
 ### backend
 
