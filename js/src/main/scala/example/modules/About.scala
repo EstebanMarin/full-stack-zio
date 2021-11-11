@@ -30,16 +30,6 @@ import slinky.web.html._
               )
             ),
             tr(
-              td("heroku"),
-              td(
-                a(
-                  target := "_blank",
-                  href := "https://full-stack-zio.herokuapp.com",
-                  "https://full-stack-zio.herokuapp.com"
-                )
-              )
-            ),
-            tr(
               td("api documentation (swagger)"),
               td(
                 a(
@@ -48,10 +38,6 @@ import slinky.web.html._
                   "https://full-stack-zio.herokuapp.com/docs/index.html?url=/docs/docs.yaml"
                 )
               )
-            ),
-            tr(
-              td("use"),
-              td("I made changes!")
             )
           )
         )
