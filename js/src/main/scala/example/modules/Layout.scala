@@ -95,7 +95,7 @@ import example.services.SignOut
   def contentBody(props: Props) = props.content
 
   def footer(props: Props) =
-    div(className := "footer bg-dark text-white d-flex justify-content-center mt-auto py-3", "© 2020 oen")
+    div(className := "footer bg-dark text-white d-flex justify-content-center mt-auto py-3", "© 2020 Esteban Marin")
 
   val component = FunctionalComponent[Props] { props =>
     val (auth, dispatch) = ReactDiode.useDiode(AppCircuit.zoomTo(_.auth))
