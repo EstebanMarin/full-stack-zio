@@ -14,7 +14,7 @@ import slinky.web.html._
         className := "card-body",
         h5(
           className := "card-title text-center mb-2",
-          "Full stack app example with databases, api documentation and more."
+          "Changing even more"
         ),
         div(
           className := "row align-items-center",
